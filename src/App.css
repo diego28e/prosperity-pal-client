@@ -1,0 +1,499 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--accent-color1);
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  height: 110vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  height: 90vh;
+}
+.app-name {
+  font-family: "Sevillana", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.141em;
+}
+
+.lead {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.2em;
+}
+.container h1 {
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.buttons button {
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  transform: scale(0.9);
+  box-shadow: #000000 0px 3px 6px;
+}
+/* 
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #00ffff;
+  --secondary-color: #013362;
+  --accent-color1: #00a6c2;
+  --accent-color2: #ffffff;
+}
+
+#root {
+  background-color: var(--accent-color1);
+  /* height: 100vh; */
+  color: #000135;
+}
+
+.header h1 {
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-align: center;
+  font-family: "Teko", system-ui;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 1rem;
+  color: var(--accent-color2);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.55);
+  z-index: 10;
+  display: none;
+}
+
+.backdrop.visible {
+  display: block;
+}
+
+#income-modal,
+#expense-modal {
+  position: absolute;
+  top: calc(50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  padding: 1rem;
+  box-shadow: 0 6px 20px var(--primary-color);
+}
+
+.amountAndDate {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 10px;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 3rem;
+  position: relative;
+  font-size: 1.2rem;
+  box-shadow: var(--secondary-color) 0px 0px 6px;
+}
+
+.fa-xmark {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+
+#data-description-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  gap: 0.5em;
+}
+
+.dataBlock {
+  /*   display: flex;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 5px;
+  margin: 7px 0 7px 0;
+  align-items: center;
+}
+
+.dataBlock input {
+  padding: 4px;
+}
+
+.save-icon {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.save-icon:hover {
+  color: #00a6c2;
+  transform: scale(1.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.editable-input {
+  display: inline-block;
+  width: fit-content;
+  max-width: 85px;
+  padding: 5px;
+  margin: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#income-list,
+#expense-list {
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: #000000 1px 2px 6px;
+  border-radius: 3px;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  text-transform: capitalize;
+  border-bottom: 0.5px solid #ccc;
+  cursor: pointer;
+  box-shadow: #ccc 0 0 5px;
+}
+
+.income-date,
+.expense-date {
+  padding: 2px;
+  border: 0.5px #ccc solid;
+  font-size: 0.8em;
+  color: #013362;
+}
+
+.accordion-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  align-items: center;
+}
+
+.monthNavigation {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.balance-summary {
+  display: flex;
+  margin: 2rem auto;
+  padding: 1.2rem 2.2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  box-shadow: inset #000000 1px 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.current-balance {
+  display: flex;
+  margin: 2rem auto;
+  padding: 1.2rem 2.2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+  box-shadow: inset #000000 1px 2px 5px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.current-balance p {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.incomeExpenseButtons {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: 1rem;
+}
+
+.add-button {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: #000000 0px 1px 8px;
+  gap: 20px;
+  align-items: center;
+  border-radius: 3px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.add-button:hover {
+  transform: scale(0.9);
+}
+
+.income-expense-list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 95%;
+  margin: auto;
+}
+
+.item-list {
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #ffffff;
+  width: 50%;
+}
+
+.item-list ul {
+  margin: 0;
+  list-style: none;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+  /* background-color: #00ffff; */
+}
+
+.footer-section a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ffffff;
+  box-shadow: #000000 1px 2px 6px;
+  border-radius: 100%;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--secondary-color);
+  margin: 1rem;
+  transition: transform ease 0.3s;
+}
+
+.footer-section a:hover {
+  transform: scale(0.9);
+}
+
+#welcome-message {
+  text-align: center;
+  padding: 1rem;
+  color: var(--accent-color2);
+  text-transform: capitalize;
+}
+
+form button {
+  padding: 0.5em;
+  background-color: var(--secondary-color);
+  color: var(--accent-color2);
+  font-size: 1.9rem;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: "Teko", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  border: none;
+  border-radius: 5px;
+  box-shadow: #ccc 2px 2px 6px;
+  margin: 1em auto 0px;
+  transition: all 0.3s ease-in-out;
+}
+
+form button:hover {
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+.modal-header {
+  text-transform: uppercase;
+  font-family: "Teko", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Tag management */
+.tag-management {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.tag-management-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.add-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-tag input[type="text"] {
+  flex-grow: 1;
+}
+
+.add-tag label {
+  margin-left: 10px;
+}
+
+.income-tags,
+.expense-tags {
+  margin-top: 20px;
+}
+
+.income-tags ul,
+.expense-tags ul {
+  list-style: none;
+  padding: 0;
+}
+
+.income-tags li,
+.expense-tags li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.delete-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  color: red;
+  transition: transform ease-in-out 0.3ms;
+}
+
+.edit-icon {
+  cursor: pointer;
+  margin-left: 10px;
+  color: #013362;
+  transition: transform ease-in-out 0.3ms;
+}
+
+.delete-icon:hover,
+.edit-icon:hover {
+  transform: scale(0.9);
+}
+
+h1#header {
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+.centered {
+  padding-top: 200px;
+  text-align: center;
+}
+
+.google-btn {
+  padding: 1rem;
+  margin: 1em auto;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+hr {
+  width: 40%;
+  margin: auto;
+}
+
+.amount-input {
+  padding-left: 25px; /* Adjust padding to make space for the $ sign */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/*End of tag management*/
+
+@media (max-width: 700px) {
+  #data-description-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .footer-section {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1em;
+  }
+}
