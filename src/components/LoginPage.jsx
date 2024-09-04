@@ -2,8 +2,16 @@ import React from "react";
 
 const LoginPage = () => {
   const handleLogin = () => {
+    const loginUrl =
+      "https://prosperity-pal-api.up.railway.app/auth/google/secrets";
+
+    if (!loginUrl) {
+      console.error("Login URL is not defined in environment variables.");
+      return;
+    }
+
     // Redirect to the backend's Google OAuth endpoint
-    window.location.href = process.env.REACT_APP_LOGIN_URL;
+    window.location.href = loginUrl;
   };
 
   return (

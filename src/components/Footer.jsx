@@ -16,7 +16,11 @@ const Footer = () => {
         <i className="fa-solid fa-tag fa-2x"></i>
       </a> */}
 
-      <a id="logout" href={process.env.REACT_APP_LOGOUT_URL} role="button">
+      <a
+        id="logout"
+        href="https://prosperity-pal-api.up.railway.app/logout"
+        role="button"
+      >
         <i className="fa-solid fa-arrow-right-from-bracket fa-2x"></i>
       </a>
 

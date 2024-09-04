@@ -33,10 +33,7 @@ const IncomeModal = ({ show, handleClose, addIncome }) => {
     console.log("Submitting income", income);
 
     try {
-      await axios.post(
-        `${process.env.REACT_APP_API_DOMAIN}/income/add`,
-        income
-      );
+      await axios.post(`prosperity-pal-api.up.railway.app/income/add`, income);
       addIncome(income);
       handleClose();
     } catch (error) {

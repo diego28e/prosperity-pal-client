@@ -48,7 +48,7 @@ const Dashboard = () => {
   const fetchData = () => {
     axios
       .get(
-        `${process.env.REACT_APP_API_DOMAIN}/secrets?month=${month}&year=${year}`
+        `prosperity-pal-api.up.railway.app/secrets?month=${month}&year=${year}`
       )
       .then((response) => {
         const data = response.data;

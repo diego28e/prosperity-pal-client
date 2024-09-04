@@ -38,7 +38,7 @@ const ExpenseModal = ({ show, handleClose, addExpense }) => {
               };
               try {
                 await axios.post(
-                  `${process.env.REACT_APP_API_DOMAIN}/expense/add`,
+                  `prosperity-pal-api.up.railway.app/expense/add`,
                   expense
                 );
                 addExpense(expense);

@@ -66,7 +66,7 @@ const DataDescriptionContainer = ({
   const handleSaveIncome = async (id) => {
     try {
       await axios.patch(
-        `${process.env.REACT_APP_API_DOMAIN}/income/update/${id}`,
+        `prosperity-pal-api.up.railway.app/income/update/${id}`,
         editedIncome
       );
       fetchData(); // Re-fetch the data after updating
@@ -81,7 +81,7 @@ const DataDescriptionContainer = ({
     try {
       console.log("Saving Expense ID:", editingExpenseId); // Debug: Ensure correct ID
       await axios.patch(
-        `${process.env.REACT_APP_API_DOMAIN}/expense/update/${editingExpenseId}`,
+        `prosperity-pal-api.up.railway.app/expense/update/${editingExpenseId}`,
         editedExpense
       );
       fetchData(); // Re-fetch the data after updating
@@ -94,9 +94,7 @@ const DataDescriptionContainer = ({
 
   const handleDeleteIncome = async (id) => {
     try {
-      await axios.post(
-        `${process.env.REACT_APP_API_DOMAIN}/income/delete/${id}`
-      );
+      await axios.post(`prosperity-pal-api.up.railway.app/income/delete/${id}`);
       fetchData(); // Re-fetch the data after deletion
       showNotification("Income deleted successfully!");
     } catch (error) {
@@ -107,7 +105,7 @@ const DataDescriptionContainer = ({
   const handleDeleteExpense = async (id) => {
     try {
       await axios.post(
-        `${process.env.REACT_APP_API_DOMAIN}/expense/delete/${id}`
+        `prosperity-pal-api.up.railway.app/expense/delete/${id}`
       );
       fetchData(); // Re-fetch the data after deletion
       showNotification("Expense deleted successfully!");
