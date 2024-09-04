@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite preview --port $PORT --host"
+    "start": "vite preview --port 4173 --host"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
